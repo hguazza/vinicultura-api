@@ -12,12 +12,20 @@ class BaseExtraction(ABC):
     def __init__(self) -> None:
         pass
 
+
     @abstractmethod
-    def extract(self, year: int) -> BaseModel:
+    def fetch_data(self, year: int) -> List[dict[str, str]]:
+        """
+        Fetch data from the given URL.
+        """
         pass
+
+    # @abstractmethod
+    # def extract(self, year: int) -> BaseModel:
+    #     pass
     
     @abstractmethod
-    def normalize(self, data: List[dict[str, str]], *args: Any) -> List[dict[str, str]]:
+    def normalize(self, data: List[dict[str, str]]) -> List[dict[str, str]]:
         """
         Normalize the data extracted from the source.
         """
