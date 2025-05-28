@@ -17,7 +17,7 @@ async def get_commercializations(year: int) -> CommercializationResponse:
     # here call logic to check year range
     extractor = CommercializationExtractor()
     response = extractor.fetch_data(year)
-
+    print('teste')
     return response
 
 @processing_router.get("/processing/{year}", response_model=ProcessingResponse)
